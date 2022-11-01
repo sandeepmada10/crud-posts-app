@@ -8,9 +8,6 @@ import AddPost from './addpost/AddPost';
 import { Grid } from '@mui/material';
 import Topbar from "./Topbar";
 
-
-
-
 export default function SimpleContainer() {
   return (
     <React.Fragment>
@@ -33,10 +30,6 @@ export default function SimpleContainer() {
           </Grid>
         </Box>
       </Container>
-
-
-
-
 
     </React.Fragment>
   );
