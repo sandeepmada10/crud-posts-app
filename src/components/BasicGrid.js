@@ -12,9 +12,7 @@ const BasicGrid = () => {
                     <Typography variant="h4">Posts</Typography>
                 </Grid>
             </Grid>
-            <Grid >
-                <Topbar/>
-            </Grid>
+            
            
 
             

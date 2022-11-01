@@ -3,9 +3,10 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 
 import CardContent from '@mui/material/CardContent';
-import { CardHeader, IconButton,Grid ,styled} from '@mui/material';
+import {  IconButton,Grid ,styled,Button, Dialog} from '@mui/material';
 import Typography from '@mui/material/Typography';
 import RemoveIcon from '@mui/icons-material/Remove';
+import UpdatePost from './UpdatePost/UpdatePost';
 
 const IconRemove=styled(RemoveIcon)({
     backgroundColor : 'red',
@@ -17,9 +18,18 @@ const IconRemove=styled(RemoveIcon)({
 )
 
 export default function CardData() {
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
     return (
         <div>
-            <Card sx={{ bgcolor: '#000000', margin: '0px 40px',border:1 }}>
+            <Card sx={{ bgcolor: '#000000', margin: '0px 30px',border:1 }}>
                 <Grid container>
                     <Grid item xs={11}>
                 <Typography sx={{ color: 'white',padding:'10px'}}>
@@ -35,7 +45,17 @@ export default function CardData() {
                     <Typography >
                         This is a Posts crud app in react js.
                     </Typography>
+                    <Grid item>
+                    <Button variant='text' onClick={handleClickOpen}>
+                        edit
+                    </Button>
+                    <Dialog fullScreen open={open} onClose={handleClose}>
+                        <UpdatePost />
+                    </Dialog>
+                    </Grid>
                 </CardContent>
+
+                
                 </Card>
 
         </div>
