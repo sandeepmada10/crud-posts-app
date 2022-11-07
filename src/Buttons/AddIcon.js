@@ -1,6 +1,6 @@
 import React from 'react';
 import AddIcon from '@mui/icons-material/Add';
-import {Grid,styled,Button} from "@mui/material";
+import {styled} from "@mui/material";
 
 const PlusIcon=styled(AddIcon)({
     border:'1px solid',
@@ -12,14 +12,7 @@ const PlusIcon=styled(AddIcon)({
 export default function AddIconPlus() {
   return (
     <div>
-         
-        <Grid item >
-        <Button>
             <PlusIcon />
-           
-        </Button>
-        </Grid>
-   
     </div>
   )
 }

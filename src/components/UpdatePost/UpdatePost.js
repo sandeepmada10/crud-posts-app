@@ -1,58 +1,38 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { styled, Grid, IconButton } from '@mui/material';
+import {  Grid, IconButton } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Container ,Box} from '@mui/system';
-import CloseIcon from '@mui/icons-material/Close';
 
 import TextField from '@mui/material/TextField';
-import SaveButton from '../saveButton';
+import CrossIcon from '../../Buttons/CrossIcon';
+import SaveButton from '../../Buttons/SaveButton';
+import BasicGrid from '../FeedData/BasicGrid';
+import '../../index.css'
 
 
-
-
-const IconClose = styled(CloseIcon)({
-    backgroundColor: 'red',
-    fontSize: "30px",
-    color: 'white',
-    padding: '5px',
-    marginLeft: '6px',
-})
-
-export default function UpdatePost() {
-    const [values, setValues] = React.useState('sandeep')
-    const [bodyValue, setBodyValue] = React.useState('This is the Update Body')
-
-    const handleChangeInput = (e) => {
-        setValues(e.target.value);
-    }
-    const handleChangeBody = (e) => {
-        setBodyValue(e.target.value)
-    }
+export default function UpdatePost(props) {
+    const {handleClose,title,body}=props;
+    
     return (
-        <div>
+     <div >
 
             <Container maxWidth="md">
-                <Box sx={{ bgcolor: '#d9d9d9', height: '100vh' }} >
-                    <Grid container>
-                        <Grid item mx='auto'>
-                            <Typography variant="h4">Posts</Typography>
-                        </Grid>
-                    </Grid>
-                    <Card sx={{ bgcolor: '#000000', margin: '0px 40px', border: 1 }}>
+                <Box sx={{ bgcolor: '#d9d9d9' }} >
+                   <BasicGrid/>
+                    <Card sx={{ bgcolor: '#000000', margin: '100px 40px', border: 1 }}>
                         <Grid container>
                             <Grid item xs={10} md={10}>
                                 <Typography sx={{ color: 'white', padding: '20px' }}>
                                     Update Post
                                 </Typography>
                             </Grid>
-                            <Grid item>
-                                <IconButton>
-                                    <IconClose sx={{ marginLeft: '40px' }} />
+                           <Grid item>
+                            <IconButton onClick={handleClose}>
+                                    <CrossIcon />
                                 </IconButton>
-
-                            </Grid>
+                                </Grid>
 
                         </Grid>
                         <CardContent
@@ -62,8 +42,8 @@ export default function UpdatePost() {
                             <TextField
                                 fullWidth
                                 variant="outlined"
-                                value={values}
-                                onChange={handleChangeInput}
+                                id="title"
+                                value={title}
                                 sx={{ marginBottom: '20px' }} />
 
                             <Typography>Body</Typography>
@@ -71,25 +51,23 @@ export default function UpdatePost() {
                             <TextField
                                 fullWidth
                                 variant='outlined'
+                                value={body}
                                 rows={6}
                                 multiline
-                                value={bodyValue}
-                                onChange={handleChangeBody}
                                 sx={{ marginBottom: '20px' }}
                             />
 
-                            <Grid item sx={{ marginLeft: '250px' }}>
-                                <IconButton >
+                            <Grid item sx={{ marginLeft: '270px' }}>
+                                <IconButton>
                                     <SaveButton />
                                 </IconButton>
                             </Grid>
                             {/* <AddPopUp sx={{color:'black'}}/> */}
                         </CardContent>
-
                     </Card>
-
                 </Box>
             </Container>
-        </div>
+            </div>
+      
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import CloseIcon from '@mui/icons-material/Close';
-import { Button, Grid,styled } from '@mui/material';
+import {  styled } from '@mui/material';
 
 
 const IconClose = styled(CloseIcon)({
@@ -13,13 +13,8 @@ const IconClose = styled(CloseIcon)({
 export default function CrossIcon() {
     return (
         <div>
-            <Grid item>
+            <IconClose sx={{ marginLeft: '40px' }} />
 
-                <Button>
-                    <IconClose sx={{ marginLeft: '40px' }} />
-                </Button>
-
-            </Grid>
         </div>
     )
 }
