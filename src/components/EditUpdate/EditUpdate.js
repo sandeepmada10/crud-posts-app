@@ -4,7 +4,7 @@ import EditButton from '../../Buttons/EditButton'
 import UpdatePost from '../UpdatePost/UpdatePost'
 
 
-export default function EditUpdate({title,body}) {
+export default function EditUpdate({inputs,setInputs,title,body,GetAllData}) {
     // const [updateData,setUpdateData]=useState(false)
     const [openDialog,setOpenDialog]=useState(false);
     const handleClickOpen = () => {
@@ -22,7 +22,7 @@ export default function EditUpdate({title,body}) {
                 </IconButton>
 
                 <Dialog fullScreen open={openDialog} >
-                    <UpdatePost title={title} body={body} handleClose={handleClose} />
+                    <UpdatePost GetAllData={GetAllData} inputs={inputs} setInputs={setInputs} title={title} body={body} handleClose={handleClose} />
                 </Dialog>
             </Grid>
         </div>

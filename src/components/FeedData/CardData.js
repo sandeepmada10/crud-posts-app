@@ -11,7 +11,7 @@ import EditUpdate from '../EditUpdate/EditUpdate';
 
 
 export default function CardData(props) {
-    const {  postsData,  GetAllData } = props;
+    const { inputs,setInputs, postsData,  GetAllData } = props;
 
     React.useEffect(() => {
         GetAllData();
@@ -57,7 +57,7 @@ const DeletePost=()=>{
                                     {item.body}
                                 </Typography>
                             </Grid>
-                            <EditUpdate  title={item.title} body={item.body}/>
+                            <EditUpdate GetAllData={GetAllData} inputs={inputs} setInputs={setInputs} title={item.title} body={item.body}/>
                             </CardContent>
                     </Card>
                 ))}
