@@ -18,7 +18,7 @@ export default function AddPost(props) {
             body: JSON.stringify({
                 title: inputs.title,
                 body: inputs.body,
-                userId: 1,
+                userId: parseInt(inputs.userId),
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',

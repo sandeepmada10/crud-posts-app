@@ -11,7 +11,7 @@ import AddPost from '../Addpost/AddPost';
 
 
 export default function Topbar(props) {
-    const {inputs,setInputs,postsData,setPostsData,GetAllData}=props;
+    const { inputs, setInputs, postsData, setPostsData, GetAllData } = props;
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -21,9 +21,9 @@ export default function Topbar(props) {
     const handleClose = () => {
         setOpen(false);
     };
-  
- 
-    
+
+
+
 
     return (
         <div>
@@ -31,20 +31,20 @@ export default function Topbar(props) {
                 <Grid item xs={9} sx={{ margin: '15px 0 0 20px' }}>
                     <Button onClick={handleClickOpen}>
                         <AddIconPlus />
-                        </Button>
+                    </Button>
                     <Dialog fullScreen open={open} >
-                        <AddPost open={open} handleClose={handleClose} inputs={inputs} 
-                        postsData={postsData}
-                        setPostsData={setPostsData}
-                        setInputs={setInputs} GetAllData={GetAllData}
+                        <AddPost open={open} handleClose={handleClose} inputs={inputs}
+                            postsData={postsData}
+                            setPostsData={setPostsData}
+                            setInputs={setInputs} GetAllData={GetAllData}
                         />
-                    </Dialog> 
+                    </Dialog>
 
                 </Grid>
 
                 <Grid item xs={1}>
                     <IconButton >
-                        <ArrowDropDownIcon  sx={{ fontSize: '100px', color: 'green' }} />
+                        <ArrowDropDownIcon sx={{ fontSize: '100px', color: 'green' }} />
                     </IconButton>
                 </Grid>
 

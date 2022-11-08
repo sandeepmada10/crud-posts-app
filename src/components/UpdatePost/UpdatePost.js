@@ -16,7 +16,7 @@ export default function UpdatePost(props) {
     const { inputs, setInputs, handleClose, title, body,GetAllData } = props;
 
     const UpdatePostApi = () => {
-        fetch('https://jsonplaceholder.typicode.com/posts/', {
+        fetch('https://jsonplaceholder.typicode.com/posts/1', {
             method: 'PUT',
             body: JSON.stringify({
                 title: inputs.title,

@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import CardData from './CardData';
@@ -21,11 +20,8 @@ export default function SimpleContainer() {
       });
   }
   
-
-
   return (
     <React.Fragment>
-      {/* <CssBaseline /> */}
       <Container maxWidth="md" >
 
         <Box sx={{ bgcolor: '#d9d9d9', minHeight: '700px' }} >
@@ -52,8 +48,6 @@ export default function SimpleContainer() {
                 postsData={postsData}
                 setPostsData={setPostsData}
                 GetAllData={GetAllData} />
-
-              {/* <Example/> */}
             </Grid>
           </Grid>
         </Box>

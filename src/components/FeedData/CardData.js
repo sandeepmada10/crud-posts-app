@@ -57,7 +57,7 @@ const DeletePost=()=>{
                                     {item.body}
                                 </Typography>
                             </Grid>
-                            <EditUpdate GetAllData={GetAllData} inputs={inputs} setInputs={setInputs} title={item.title} body={item.body}/>
+                            <EditUpdate GetAllData={GetAllData} inputs={inputs} setInputs={setInputs} userId={item.userId} title={item.title} body={item.body}/>
                             </CardContent>
                     </Card>
                 ))}
